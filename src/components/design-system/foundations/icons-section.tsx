@@ -104,8 +104,14 @@ const ICONS: { name: string; component: LucideIcon }[] = [
   { name: "Loader2", component: Loader2 },
 ];
 
+const SIZES = [
+  { label: "16px", className: "h-4 w-4" },
+  { label: "24px", className: "h-6 w-6" },
+] as const;
+
 export function IconsSection() {
   const [query, setQuery] = useState("");
+  const [size, setSize] = useState<(typeof SIZES)[number]>(SIZES[1]);
 
   const filtered = useMemo(() => {
     if (!query.trim()) return ICONS;
@@ -119,12 +125,29 @@ export function IconsSection() {
       title="Icons"
       description="Common Lucide icons available in the project. Search to filter."
     >
-      <div className="mb-4 max-w-sm">
-        <Input
-          placeholder="Search icons..."
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
+      <div className="mb-4 flex items-center gap-4">
+        <div className="max-w-sm flex-1">
+          <Input
+            placeholder="Search icons..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+        </div>
+        <div className="flex items-center gap-1 rounded-lg border p-1">
+          {SIZES.map((s) => (
+            <button
+              key={s.label}
+              onClick={() => setSize(s)}
+              className={`rounded-md px-2.5 py-1 text-xs font-medium transition-colors ${
+                size.label === s.label
+                  ? "bg-primary text-primary-foreground"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {s.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {filtered.length === 0 ? (
@@ -138,7 +161,7 @@ export function IconsSection() {
               key={name}
               className="flex flex-col items-center gap-1.5 rounded-md border p-3 transition-colors hover:bg-muted"
             >
-              <Icon className="h-6 w-6" />
+              <Icon className={size.className} />
               <span className="truncate text-center font-mono text-[10px] text-muted-foreground">
                 {name}
               </span>
