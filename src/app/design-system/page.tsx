@@ -1,5 +1,6 @@
 import { SidebarNav } from "@/components/design-system/sidebar-nav";
 import { MobileNav } from "@/components/design-system/mobile-nav";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 // Foundations
 import { ColorsSection } from "@/components/design-system/foundations/colors-section";
@@ -77,7 +78,10 @@ export default function DesignSystemPage() {
         {/* Desktop Sidebar */}
         <aside className="hidden lg:block w-64 shrink-0 border-r">
           <div className="sticky top-0 h-screen overflow-y-auto p-6">
-            <h1 className="mb-6 text-xl font-bold">Design System</h1>
+            <div className="mb-6 flex items-center justify-between">
+              <h1 className="text-xl font-bold">Design System</h1>
+              <ThemeToggle />
+            </div>
             <SidebarNav />
           </div>
         </aside>

@@ -11,6 +11,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { SidebarNav } from "./sidebar-nav";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -31,7 +32,8 @@ export function MobileNav() {
           </div>
         </SheetContent>
       </Sheet>
-      <h1 className="text-lg font-semibold">Design System</h1>
+      <h1 className="flex-1 text-lg font-semibold">Design System</h1>
+      <ThemeToggle />
     </div>
   );
 }
