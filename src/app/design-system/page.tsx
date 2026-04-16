@@ -76,10 +76,10 @@ export default function DesignSystemPage() {
       <MobileNav />
       <div className="flex flex-1">
         {/* Desktop Sidebar */}
-        <aside className="hidden lg:block w-64 shrink-0 border-r font-[family-name:var(--font-geist)]">
+        <aside className="hidden lg:block w-64 shrink-0 border-r">
           <div className="sticky top-0 h-screen overflow-y-auto p-6">
-            <div className="mb-6 flex items-center justify-between">
-              <h1 className="text-xl font-bold">Design System</h1>
+            <h1 className="mb-4 text-xl font-bold">Design System</h1>
+            <div className="mb-6">
               <ThemeToggle />
             </div>
             <SidebarNav />
