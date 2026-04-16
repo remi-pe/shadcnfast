@@ -58,7 +58,7 @@ export function ButtonSection() {
       </ComponentPreview>
 
       <ComponentPreview title="As Link">
-        <Button variant="link" render={<a href="#" />}>
+        <Button variant="link" nativeButton={false} render={<a href="#" />}>
           Login
         </Button>
       </ComponentPreview>
