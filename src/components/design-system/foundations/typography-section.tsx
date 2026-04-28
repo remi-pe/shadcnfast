@@ -1,5 +1,9 @@
+"use client";
+
+import { useState } from "react";
 import { SectionWrapper } from "@/components/design-system/section-wrapper";
 import { ComponentPreview } from "@/components/design-system/component-preview";
+import { SegmentedControl } from "@/components/ui/segmented-control";
 
 const HEADING_SPECIMENS = [
   { label: "h1", className: "text-4xl font-extrabold tracking-tight", text: "The quick brown fox" },
@@ -29,18 +33,25 @@ const FONT_WEIGHTS = [
 ] as const;
 
 const SIZE_SCALE = [
-  { className: "text-xs",   size: "0.75rem / 12px",  lineHeight: "1rem / 16px",    letterSpacing: "Normal (0)" },
-  { className: "text-sm",   size: "0.875rem / 14px", lineHeight: "1.25rem / 20px", letterSpacing: "Normal (0)" },
-  { className: "text-base", size: "1rem / 16px",     lineHeight: "1.5rem / 24px",  letterSpacing: "Normal (0)" },
-  { className: "text-lg",   size: "1.125rem / 18px", lineHeight: "1.75rem / 28px", letterSpacing: "Normal (0)" },
-  { className: "text-xl",   size: "1.25rem / 20px",  lineHeight: "1.75rem / 28px", letterSpacing: "Normal (0)" },
-  { className: "text-2xl",  size: "1.5rem / 24px",   lineHeight: "2rem / 32px",    letterSpacing: "Normal (0)" },
-  { className: "text-3xl",  size: "1.875rem / 30px", lineHeight: "2.25rem / 36px", letterSpacing: "Normal (0)" },
-  { className: "text-4xl",  size: "2.25rem / 36px",  lineHeight: "2.5rem / 40px",  letterSpacing: "Normal (0)" },
-  { className: "text-5xl",  size: "3rem / 48px",     lineHeight: "1 (48px)",       letterSpacing: "Normal (0)" },
+  { className: "text-xs",   sizeRem: "0.75rem",  sizePx: "12px", lineHeightRem: "1rem",    lineHeightPx: "16px", letterSpacing: "Normal (0)" },
+  { className: "text-sm",   sizeRem: "0.875rem", sizePx: "14px", lineHeightRem: "1.25rem", lineHeightPx: "20px", letterSpacing: "Normal (0)" },
+  { className: "text-base", sizeRem: "1rem",     sizePx: "16px", lineHeightRem: "1.5rem",  lineHeightPx: "24px", letterSpacing: "Normal (0)" },
+  { className: "text-lg",   sizeRem: "1.125rem", sizePx: "18px", lineHeightRem: "1.75rem", lineHeightPx: "28px", letterSpacing: "Normal (0)" },
+  { className: "text-xl",   sizeRem: "1.25rem",  sizePx: "20px", lineHeightRem: "1.75rem", lineHeightPx: "28px", letterSpacing: "Normal (0)" },
+  { className: "text-2xl",  sizeRem: "1.5rem",   sizePx: "24px", lineHeightRem: "2rem",    lineHeightPx: "32px", letterSpacing: "Normal (0)" },
+  { className: "text-3xl",  sizeRem: "1.875rem", sizePx: "30px", lineHeightRem: "2.25rem", lineHeightPx: "36px", letterSpacing: "Normal (0)" },
+  { className: "text-4xl",  sizeRem: "2.25rem",  sizePx: "36px", lineHeightRem: "2.5rem",  lineHeightPx: "40px", letterSpacing: "Normal (0)" },
+  { className: "text-5xl",  sizeRem: "3rem",     sizePx: "48px", lineHeightRem: "1",       lineHeightPx: "48px", letterSpacing: "Normal (0)" },
 ] as const;
 
+const UNIT_OPTIONS = [
+  { value: "px", label: "px" },
+  { value: "rem", label: "rem" },
+];
+
 export function TypographySection() {
+  const [unit, setUnit] = useState<"px" | "rem">("px");
+
   return (
     <SectionWrapper
       id="typography"
@@ -87,7 +98,16 @@ export function TypographySection() {
         </ComponentPreview>
 
         {/* Size scale */}
-        <ComponentPreview title="Size Scale" className="flex-col items-start gap-0">
+        <ComponentPreview title="Size Scale" className="flex-col items-start gap-4">
+          <div className="flex w-full justify-end">
+            <SegmentedControl
+              size="sm"
+              options={UNIT_OPTIONS}
+              value={unit}
+              onValueChange={(v) => setUnit(v as "px" | "rem")}
+              aria-label="Toggle between pixels and rem"
+            />
+          </div>
           <div className="w-full overflow-x-auto">
             <table className="w-full text-left text-sm">
               <thead>
@@ -106,10 +126,10 @@ export function TypographySection() {
                       {row.className}
                     </td>
                     <td className="py-2 pr-6 font-mono text-xs text-muted-foreground">
-                      {row.size}
+                      {unit === "px" ? row.sizePx : row.sizeRem}
                     </td>
                     <td className="py-2 pr-6 font-mono text-xs text-muted-foreground">
-                      {row.lineHeight}
+                      {unit === "px" ? row.lineHeightPx : row.lineHeightRem}
                     </td>
                     <td className="py-2 pr-6 font-mono text-xs text-muted-foreground">
                       {row.letterSpacing}
