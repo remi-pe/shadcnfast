@@ -46,7 +46,6 @@ import { FileUploadSection } from "@/components/design-system/forms/file-upload-
 import { NumberInputSection } from "@/components/design-system/forms/number-input-section";
 import { PasswordStrengthSection } from "@/components/design-system/forms/password-strength-section";
 import { PhoneInputSection } from "@/components/design-system/forms/phone-input-section";
-import { RatingSection } from "@/components/design-system/forms/rating-section";
 import { LikertScaleSection } from "@/components/design-system/forms/likert-scale-section";
 import { NPSScoreSection } from "@/components/design-system/forms/nps-score-section";
 import { ChoiceCardSection } from "@/components/design-system/forms/choice-card-section";
@@ -67,7 +66,6 @@ import { SeparatorSection } from "@/components/design-system/data-display/separa
 import { SkeletonSection } from "@/components/design-system/data-display/skeleton-section";
 import { ProgressSection } from "@/components/design-system/data-display/progress-section";
 import { SparklineSection } from "@/components/design-system/data-display/sparkline-section";
-import { GaugeSection } from "@/components/design-system/data-display/gauge-section";
 import { AvatarGroupSection } from "@/components/design-system/data-display/avatar-group-section";
 import { TimelineSection } from "@/components/design-system/data-display/timeline-section";
 import { StepperSection } from "@/components/design-system/data-display/stepper-section";
@@ -178,7 +176,6 @@ export default function DesignSystemPage() {
             <NumberInputSection />
             <PasswordStrengthSection />
             <PhoneInputSection />
-            <RatingSection />
             <LikertScaleSection />
             <NPSScoreSection />
             <ChoiceCardSection />
@@ -199,7 +196,6 @@ export default function DesignSystemPage() {
             <SkeletonSection />
             <ProgressSection />
             <SparklineSection />
-            <GaugeSection />
             <AvatarGroupSection />
             <TimelineSection />
             <StepperSection />
