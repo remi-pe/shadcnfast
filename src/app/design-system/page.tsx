@@ -3,12 +3,12 @@ import { MobileNav } from "@/components/design-system/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 // Foundations
-import { ColorsSection } from "@/components/design-system/foundations/colors-section";
 import { TypographySection } from "@/components/design-system/foundations/typography-section";
+import { ColorsSection } from "@/components/design-system/foundations/colors-section";
+import { IconsSection } from "@/components/design-system/foundations/icons-section";
 import { SpacingSection } from "@/components/design-system/foundations/spacing-section";
 import { BordersRadiusSection } from "@/components/design-system/foundations/borders-radius-section";
 import { ShadowsSection } from "@/components/design-system/foundations/shadows-section";
-import { IconsSection } from "@/components/design-system/foundations/icons-section";
 
 // Patterns
 import { EmptyStateSection } from "@/components/design-system/patterns/empty-state-section";
@@ -133,12 +133,12 @@ export default function DesignSystemPage() {
             </div>
 
             {/* Foundations */}
-            <ColorsSection />
             <TypographySection />
+            <ColorsSection />
+            <IconsSection />
             <SpacingSection />
             <BordersRadiusSection />
             <ShadowsSection />
-            <IconsSection />
 
             {/* Patterns */}
             <EmptyStateSection />

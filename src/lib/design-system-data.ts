@@ -20,12 +20,12 @@ export type Category = (typeof CATEGORIES)[number];
 
 export const SECTIONS: SectionItem[] = [
   // Primitives
-  { id: "colors", label: "Colors", category: "Primitives" },
   { id: "typography", label: "Typography", category: "Primitives" },
+  { id: "colors", label: "Colors", category: "Primitives" },
+  { id: "icons", label: "Icons", category: "Primitives" },
   { id: "spacing", label: "Spacing", category: "Primitives" },
   { id: "borders-radius", label: "Borders & Radius", category: "Primitives" },
   { id: "shadows", label: "Shadows", category: "Primitives" },
-  { id: "icons", label: "Icons", category: "Primitives" },
 
   // Patterns
   { id: "empty-state", label: "Empty State", category: "Patterns" },
