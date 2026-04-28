@@ -16,7 +16,7 @@ export function AvatarSection() {
     >
       <ComponentPreview title="With Image">
         <Avatar>
-          <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+          <AvatarImage src="/avatar-portrait.jpg" alt="User avatar" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
       </ComponentPreview>
@@ -38,15 +38,15 @@ export function AvatarSection() {
       <ComponentPreview title="Sizes">
         <div className="flex items-center gap-4">
           <Avatar className="h-8 w-8">
-            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+            <AvatarImage src="/avatar-portrait.jpg" alt="User avatar" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
           <Avatar className="h-12 w-12">
-            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+            <AvatarImage src="/avatar-portrait.jpg" alt="User avatar" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
           <Avatar className="h-16 w-16">
-            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+            <AvatarImage src="/avatar-portrait.jpg" alt="User avatar" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
         </div>
