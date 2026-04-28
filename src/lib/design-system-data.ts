@@ -111,8 +111,6 @@ export const SECTIONS: SectionItem[] = [
   { id: "pagination", label: "Pagination", category: "Navigation" },
 
   // Layout
-  { id: "collapsible", label: "Collapsible", category: "Layout" },
-  { id: "resizable", label: "Resizable", category: "Layout" },
   { id: "scroll-area", label: "Scroll Area", category: "Layout" },
 
   // Overlay

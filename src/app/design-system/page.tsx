@@ -94,8 +94,6 @@ import { NavigationMenuSection } from "@/components/design-system/navigation/nav
 import { PaginationSection } from "@/components/design-system/navigation/pagination-section";
 
 // Layout
-import { CollapsibleSection } from "@/components/design-system/layout/collapsible-section";
-import { ResizableSection } from "@/components/design-system/layout/resizable-section";
 import { ScrollAreaSection } from "@/components/design-system/layout/scroll-area-section";
 
 // Overlay
@@ -227,8 +225,6 @@ export default function DesignSystemPage() {
             <PaginationSection />
 
             {/* Layout */}
-            <CollapsibleSection />
-            <ResizableSection />
             <ScrollAreaSection />
 
             {/* Overlay */}
