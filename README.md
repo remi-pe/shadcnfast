@@ -19,7 +19,7 @@ Tell Next.js to transpile the package:
 ```ts
 // next.config.ts
 const nextConfig = {
-  transpilePackages: ["mocaa-system"],
+  transpilePackages: ["mocaa_system"],
 };
 export default nextConfig;
 ```
@@ -29,15 +29,15 @@ Wire up Tailwind v4 + design tokens in your consumer's `globals.css`. The `@sour
 ```css
 /* src/app/globals.css (standard create-next-app with --src-dir) */
 @import "tailwindcss";
-@source "../../node_modules/mocaa-system/src";
-@import "mocaa-system/styles.css";
+@source "../../node_modules/mocaa_system/src";
+@import "mocaa_system/styles.css";
 ```
 
 ```css
 /* app/globals.css (no src/ directory) */
 @import "tailwindcss";
-@source "../node_modules/mocaa-system/src";
-@import "mocaa-system/styles.css";
+@source "../node_modules/mocaa_system/src";
+@import "mocaa_system/styles.css";
 ```
 
 The `@source` line lets Tailwind v4 scan the package's source for class usage. The `styles.css` import brings in CSS variables, base styles, and dark-mode tokens.
@@ -45,14 +45,14 @@ The `@source` line lets Tailwind v4 scan the package's source for class usage. T
 Then use any component:
 
 ```tsx
-import { Button } from "mocaa-system/button";
-import { Card, CardContent } from "mocaa-system/card";
-import { EmptyState } from "mocaa-system/empty-state";
-import { cn } from "mocaa-system/utils";
-import { ThemeProvider } from "mocaa-system/theme-provider";
+import { Button } from "mocaa_system/button";
+import { Card, CardContent } from "mocaa_system/card";
+import { EmptyState } from "mocaa_system/empty-state";
+import { cn } from "mocaa_system/utils";
+import { ThemeProvider } from "mocaa_system/theme-provider";
 ```
 
-Each `components/ui/*.tsx` file is exposed at `mocaa-system/<filename-without-ext>`.
+Each `components/ui/*.tsx` file is exposed at `mocaa_system/<filename-without-ext>`.
 
 ### Updating
 
